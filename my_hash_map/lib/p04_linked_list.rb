@@ -35,6 +35,10 @@ class LinkedList
     nil
   end
 
+  def length
+    self.each_with_object(0) { |el, acc| acc += 1 } - 1
+  end
+
   def first
     head.next
   end
@@ -52,6 +56,7 @@ class LinkedList
     each do |node|
       return node.val if node.key == key
     end
+    nil
   end
 
   def include?(key)

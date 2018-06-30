@@ -10,8 +10,9 @@ class HashMap
     @store = Array.new(num_buckets) { LinkedList.new }
     @count = 0
   end
-
+  
   def include?(key)
+    @store[bucket(key)].include?(key)
   end
 
   def set(key, val)
